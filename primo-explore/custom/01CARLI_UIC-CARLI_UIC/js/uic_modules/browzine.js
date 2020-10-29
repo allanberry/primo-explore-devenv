@@ -1,3 +1,5 @@
+const browzinePrimoAdapter = require("./browzine-primo-adapter");
+
 function appendJournalsCard() {
   var new_card = document.createElement("md-card");
 
@@ -48,6 +50,39 @@ function appendJournalsCard() {
   });
 }
 
+/**
+ * adapted from https://thirdiron.atlassian.net/wiki/spaces/BrowZineAPIDocs/pages/79200260/Ex+Libris+Primo+Integration
+ */
+function primoIntegration(app) {
+  // Load BrowZine Adapter
+  const browzine = {
+    libraryId: "81",
+    apiKey: "f126de2d-8846-4a37-b6f9-069c6e057c08",
+  };
+
+  console.log(" * * * ");
+
+  const adapter = browzinePrimoAdapter(browzine);
+
+  app.controller("prmSearchResultAvailabilityLineAfterController", function (
+    scope
+  ) {
+
+  });
+
+  app.component("prmSearchResultAvailabilityLineAfter", {
+    bindings: { parentCtrl: "<" },
+    controller: "prmSearchResultAvailabilityLineAfterController",
+  });
+
+  
+  console.log(" * * * ");
+}
+
 module.exports = {
   appendJournalsCard,
+  primoIntegration,
 };
+
+// libraryId: "81",
+// apiKey: "f126de2d-8846-4a37-b6f9-069c6e057c08",

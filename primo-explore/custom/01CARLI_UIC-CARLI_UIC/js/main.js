@@ -12,6 +12,7 @@ stackmap.init();
 
 mainmenu.removeTargetAttrs();
 browzine.appendJournalsCard();
+browzine.primoIntegration(app);
 
 // app.component("myInstitutionComponent", {
 //   template: `<span style="margin-left: 40%;">Hello World</span>`,
