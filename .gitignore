@@ -4,6 +4,7 @@ package-lock.json
 /node_modules/
 
 *.secret
+.env
 
 # built packages should not be included in a repository, because they may include raw API keys within the package (e.g. Browzine)
 packages/*

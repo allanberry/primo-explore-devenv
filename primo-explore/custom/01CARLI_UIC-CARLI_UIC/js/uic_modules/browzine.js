@@ -1,4 +1,4 @@
-const browzinePrimoAdapter = require("./browzine-primo-adapter");
+// const browzinePrimoAdapter = require("./browzine-primo-adapter");
 
 function appendJournalsCard() {
   var new_card = document.createElement("md-card");
@@ -55,34 +55,32 @@ function appendJournalsCard() {
  */
 function primoIntegration(app) {
   // Load BrowZine Adapter
-  const browzine = {
+  window.browzine = {
     libraryId: "81",
-    apiKey: "f126de2d-8846-4a37-b6f9-069c6e057c08",
+    apiKey: "xxx",
   };
 
-  console.log(" * * * ");
 
-  const adapter = browzinePrimoAdapter(browzine);
 
-  app.controller("prmSearchResultAvailabilityLineAfterController", function (
-    scope
-  ) {
+  var w = document.createElement("script");
+  w.type = "text/javascript";
+  w.async = true;
+  w.src = "https://s3.amazonaws.com/browzine-adapters/primo/browzine-primo-adapter.js";
+  var b = document.body;
+  b.appendChild(w);
 
+  app.controller('prmSearchResultAvailabilityLineAfterController', function($scope) {
+    window.browzine.primo.searchResult($scope);
   });
 
-  app.component("prmSearchResultAvailabilityLineAfter", {
-    bindings: { parentCtrl: "<" },
-    controller: "prmSearchResultAvailabilityLineAfterController",
+  app.component('prmSearchResultAvailabilityLineAfter', {
+    bindings: { parentCtrl: '<' },
+    controller: 'prmSearchResultAvailabilityLineAfterController'
   });
 
-  
-  console.log(" * * * ");
 }
 
 module.exports = {
   appendJournalsCard,
   primoIntegration,
 };
-
-// libraryId: "81",
-// apiKey: "f126de2d-8846-4a37-b6f9-069c6e057c08",
