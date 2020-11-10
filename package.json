@@ -70,5 +70,8 @@
   "bugs": {
     "url": "https://github.com/allanberry/primo-explore-devenv/issues"
   },
-  "homepage": "https://github.com/allanberry/primo-explore-devenv#readme"
+  "homepage": "https://github.com/allanberry/primo-explore-devenv#readme",
+  "dependencies": {
+    "dotenv": "^8.2.0"
+  }
 }

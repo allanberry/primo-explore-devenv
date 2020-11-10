@@ -1,5 +1,7 @@
 // const browzinePrimoAdapter = require("./browzine-primo-adapter");
 
+const env = require('../../../../../env.js');
+
 function appendJournalsCard() {
   var new_card = document.createElement("md-card");
 
@@ -55,9 +57,40 @@ function appendJournalsCard() {
  */
 function primoIntegration(app) {
   // Load BrowZine Adapter
+
   window.browzine = {
-    libraryId: "81",
-    apiKey: "xxx",
+    libraryId: env.BROWZINE_LIBRARYID,
+    apiKey: env.BROWZINE_APIKEY,
+
+    journalCoverImagesEnabled: true,
+ 
+    journalBrowZineWebLinkTextEnabled: true,
+    journalBrowZineWebLinkText: "View Journal Contents",
+ 
+    articleBrowZineWebLinkTextEnabled: true,
+    articleBrowZineWebLinkText: "View Issue Contents",
+ 
+    articlePDFDownloadLinkEnabled: true,
+    articlePDFDownloadLinkText: "Download PDF",
+ 
+    articleLinkEnabled: true,
+    articleLinkText: "Read Article",
+ 
+    printRecordsIntegrationEnabled: true,
+ 
+    unpaywallEmailAddressKey: "enter-your-email@your-institution-domain.edu",
+ 
+    articlePDFDownloadViaUnpaywallEnabled: true,
+    articlePDFDownloadViaUnpaywallText: "Download PDF (via Unpaywall)",
+ 
+    articleLinkViaUnpaywallEnabled: true,
+    articleLinkViaUnpaywallText: "Read Article (via Unpaywall)",
+ 
+    articleAcceptedManuscriptPDFViaUnpaywallEnabled: true,
+    articleAcceptedManuscriptPDFViaUnpaywallText: "Download PDF (Accepted Manuscript via Unpaywall)",
+ 
+    articleAcceptedManuscriptArticleLinkViaUnpaywallEnabled: true,
+    articleAcceptedManuscriptArticleLinkViaUnpaywallText: "Read Article (Accepted Manuscript via Unpaywall)",
   };
 
 

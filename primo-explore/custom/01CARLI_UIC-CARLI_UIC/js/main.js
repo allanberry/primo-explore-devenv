@@ -1,5 +1,7 @@
 "use strict";
 
+// require('dotenv').config()
+
 const mainmenu = require("./uic_modules/mainmenu");
 const libchat = require("./uic_modules/libchat");
 const stackmap = require("./uic_modules/stackmap");

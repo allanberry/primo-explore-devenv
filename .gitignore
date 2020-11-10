@@ -3,8 +3,13 @@ primo-explore/tmp/
 package-lock.json
 /node_modules/
 
+# the following are to keep API keys out of the repo 
 *.secret
-.env
+env.js
+
+# because compiled JS contains API keys, they must also be kept out of the repo.  It's OK because compiled packages are uploaded directly to Alma.
+custom.js
+custom.js.map
 
 # built packages should not be included in a repository, because they may include raw API keys within the package (e.g. Browzine)
 packages/*
